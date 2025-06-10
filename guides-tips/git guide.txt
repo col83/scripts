@@ -1,0 +1,9 @@
+cd to needed directory
+
+git init
+
+git config --global init.defaultBranch master
+
+git remote add origin <link to github repo>
+
+git branch -M master

