@@ -1,3 +1,0 @@
-about:config in url panel
-
-xpinstall.signatures.required set to false

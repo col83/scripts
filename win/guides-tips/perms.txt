@@ -1,0 +1,3 @@
+takeown /F C:\ /R /A
+icacls C:\ /T /Inheritance:e /grant Администраторы:F
+icacls C:\ /T /Inheritance:e /grant Administrators:F

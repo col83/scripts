@@ -1,0 +1,13 @@
+about:config in url panel
+
+
+unsigned extensions
+xpinstall.signatures.required set to false
+
+
+badbrowser.php
+accessibility.blockautorefresh to true
+
+
+disable webrtc
+media.peerconnection.enabled to false

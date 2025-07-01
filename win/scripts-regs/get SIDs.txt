@@ -1,0 +1,13 @@
+REM powershell
+
+Get-LocalUser | Select-Object Name, SID
+Get-LocalUser | Select-Object Name, SID | sort
+
+Get-WmiObject -Class Win32_UserAccount -Filter "Name='$env:USERNAME'" | Select-Object SID
+Get-WmiObject -Class Win32_UserAccount -Filter "Name='$env:USERNAME'" | Select-Object SID | findstr "S-"
+Get-WmiObject -Class Win32_UserAccount -Filter "Name='$env:USERNAME'" | Select-Object SID | findstr "S-" | clip
+
+REM cmd
+wmic useraccount where name='%username%' get sid
+wmic useraccount where name='%username%' get sid | find "S-"
+wmic useraccount where name='%username%' get sid | find "S-" | clip

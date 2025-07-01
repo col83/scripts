@@ -1,0 +1,8 @@
+go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces
+
+search needed interface (easy if dns for adapter is changed)
+
+create:
+
+TcpAckFrequency dword32 with 1
+TCPNoDelay dword32 with 1

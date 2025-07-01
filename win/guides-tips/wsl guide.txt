@@ -1,0 +1,2 @@
+wsl --update --pre-release
+wsl --install -location "C:\linux\ubuntu" -n --name ubuntu --web-download
