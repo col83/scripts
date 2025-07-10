@@ -1,1 +1,0 @@
-powershell -c "irm https://get.activated.win | iex"
