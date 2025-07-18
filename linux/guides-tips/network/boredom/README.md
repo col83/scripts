@@ -1,0 +1,1 @@
+This is where we will collect notes for tools and solutions for testing home networks and labs for security and resistance to hacking.

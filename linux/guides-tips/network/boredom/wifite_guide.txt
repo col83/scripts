@@ -2,15 +2,16 @@ pacman -Syy
 pacman -S --needed aircrack-ng cowpatty git hashcat python reaver wireshark-cli
 
 
-cd ~
+cd ~/
+python -m venv wifite
+source /wifite/bin/activate
 git clone https://github.com/kimocoder/wifite2.git
-
 pip3 install -r ./wifite2/requirements.txt
 cd ./wifite2
 python3 setup.py install
 
 
-cd ~
+cd ~/
 mkdir boredom
 cd boredom
 
