@@ -1,0 +1,15 @@
+adb - https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+
+:: list packages
+adb shell cmd package list packages | findstr "webview"
+
+:: uninstall versions (if needed). where "*" it package name of webview implementation
+adb uninstall com.google.android.*
+:: or
+adb uninstall com.android.*
+
+:: set version (package name)
+adb shell cmd webviewupdate set-webview-implementation com.google.android.*
+
+
+:: don't forget to download the required version or build it from source code :)
