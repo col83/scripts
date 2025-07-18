@@ -1,4 +1,4 @@
-adb - https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+adb - https://developer.android.com/tools/releases/platform-tools
 
 :: list packages
 adb shell cmd package list packages | findstr "webview"
