@@ -1,0 +1,39 @@
+#size - size for reserved space
+
+reccomend - 20480‬ if 64gb (usb) or 16384 if 32gb (usb)
+
+
+# linux
+
+lsblk
+
+Ventoy2Disk.sh -I -g -r #size /dev/#drive-for-ventoy
+
+
+# windows
+
+cmd
+
+diskpart
+
+list disk
+
+sel disk #drive-for-ventoy
+
+clean
+
+Ventoy2Disk.exe VTOYCLI /I /Drive:#letter: /GPT /NOUSBCheck /NOSB /R:#size
+
+diskpart
+
+list disk
+
+sel disk #ventoy-drive
+
+CREATE PARTITION PRIMARY
+
+list part
+
+sel part #new part
+
+FORMAT FS=exFAT UNIT=4096 LABEL="#DriveName" QUICK OVERRIDE
