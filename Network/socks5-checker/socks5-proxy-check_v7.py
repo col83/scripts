@@ -69,7 +69,7 @@ def load_config(config_path=None):
         with open(config_path) as f:
             config = json.load(f)
             validate_config(config)
-            print(f"✅ Config loaded from {config_path}")
+            print(f"✅ Config loaded from {config_path}\n")
             return config
     except Exception as e:
         print(f"⚠ Error loading config: {e}")
@@ -93,7 +93,7 @@ def load_proxy_list(config, use_backup=False, use_url=False):
     try:
         if not use_backup:
             url = config["proxy_settings"]["proxy_list_url"]
-            print(f"⌛ Trying to load proxy list from {url}")
+            print(f"⌛ Trying to load proxy list from {url}\n")
             response = requests.get(url, timeout=10)
             if response.status_code == 200:
                 proxies = [
@@ -108,7 +108,7 @@ def load_proxy_list(config, use_backup=False, use_url=False):
         print(f"⚠ Failed to load proxy list: {e}")
     
     if not use_url:
-        print("ℹ Using backup proxy list (fallback)")
+        print("ℹ  Using backup proxy list (fallback)")
         return config["proxy_settings"]["backup_proxy_list"]
     
     print("⚠ Failed to load proxies and --url was requested. Exiting.")
