@@ -1,3 +1,5 @@
+(wip)
+
 #size - size for reserved space
 
 reccomend - 20480‬ if 64gb (usb) or 16384 if 32gb (usb)
