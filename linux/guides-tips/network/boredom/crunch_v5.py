@@ -14,7 +14,7 @@ TOTAL_ENTRIES = 100_000_000
 ENTRY_LENGTH = 9
 TEMP_SUFFIX = '.tmp'
 CHUNK_SIZE = 2_000_000  # Reduced chunk size for memory safety
-NUM_WORKERS = min(cpu_count() - 1, 4)  # Limit workers to 4 for memory
+NUM_WORKERS = min(cpu_count() - 4, 4)  # Limit workers to 4 for memory
 
 def check_disk_space(path, required_bytes):
     """Verify free disk space."""
