@@ -1,6 +1,6 @@
 ## windows
 only if u have USB adapter
-not e.g Intel Wifi Card or something. because on windows, monitor mode pain in the ass
+not e.g Intel Wifi Card or something. because on windows, monitor mode (on non usb hardware) - pain in the ass
 but you can still decrypt hashes on Windows. the procedure will be described later
 
 ## preparations
